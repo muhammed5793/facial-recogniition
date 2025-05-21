@@ -1,0 +1,8 @@
+*.log
+/node_modules/
+/venv/
+model.h5
+main2.py
+app.py
+data
+.vscode

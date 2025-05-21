@@ -1,0 +1,518 @@
+/* body {
+  font-family: 'Verdana', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+header {
+  background-color: rgb(3, 51, 3);
+  color: rgba(252, 6, 6, 0.719);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 9%;
+}
+
+nav ul li a:hover {
+  background-color: yellow;
+  color: red;
+  border-radius: 6px;
+}
+
+
+main {
+  padding: 3rem 2rem;
+  background-color: #d6df99;
+}
+
+
+section {
+  margin-bottom: 3rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+section h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+#webcam_feed, #facedetection {
+  margin-top: 1.5rem;
+  border: 3px solid rgb(3, 51, 3);
+  padding: 1rem;
+  text-align: center;
+  width: 80%;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+#webcam_feed p, #facedetection p {
+  color: #777;
+  font-size: 1.2rem;
+}
+
+
+#student_name_prompt {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#student_name_prompt input {
+  width: 70%;
+  padding: 10px;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+#student_name_prompt button {
+  padding: 12px 20px;
+  background-color: rgb(3, 51, 3);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+#student_name_prompt button:hover {
+  background-color: yellow;
+  color: red;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: rgb(3, 51, 3);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: block;
+  margin: 20px auto;
+}
+
+button:hover {
+  background-color: yellow;
+  color: red;
+}
+
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: rgb(3, 51, 3);
+  color: white;
+  font-size: 1.1rem;
+}
+
+table td {
+  font-size: 1rem;
+}
+
+
+table td button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 2px;
+}
+
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #333;
+  color: white;
+  font-size: 1.1rem;
+}
+
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    display: block;
+    text-align: center;
+    width: auto;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #webcam_feed, #facedetection {
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+}
+
+
+#train {
+  text-align: center;
+  background-image: url('/static/hi.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cap {
+  display: block;
+  text-align: center;
+  width: 100%;
+} */
+ body {
+  font-family: 'Verdana', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+  background-color: rgb(3, 51, 3);
+  color: rgba(252, 6, 6, 0.719);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Navigation Bar */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 9%;
+}
+
+nav ul li a:hover {
+  background-color: yellow;
+  color: red;
+  border-radius: 6px;
+}
+
+/* Main Content */
+main {
+  padding: 3rem 2rem;
+  background-color: #d6df99;
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 3rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+section h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Webcam and Face Detection Feed */
+#webcam_feed, #facedetection {
+  margin-top: 1.5rem;
+  border: 3px solid rgb(3, 51, 3);
+  padding: 1rem;
+  text-align: center;
+  width: 80%;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+#webcam_feed p, #facedetection p {
+  color: #777;
+  font-size: 1.2rem;
+}
+
+/* Student Name Prompt */
+#student_name_prompt {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#student_name_prompt input {
+  width: 70%;
+  padding: 10px;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+#student_name_prompt button {
+  padding: 12px 20px;
+  background-color: rgb(3, 51, 3);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+#student_name_prompt button:hover {
+  background-color: yellow;
+  color: red;
+}
+
+/* Buttons */
+button {
+  padding: 12px 20px;
+  background-color: rgb(3, 51, 3);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: block;
+  margin: 20px auto;
+}
+
+button:hover {
+  background-color: yellow;
+  color: red;
+}
+
+/* Form Styling */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Student Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: rgb(3, 51, 3);
+  color: white;
+  font-size: 1.1rem;
+}
+
+table td {
+  font-size: 1rem;
+}
+
+/* Action Buttons in Table */
+table td button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 2px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #333;
+  color: white;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    display: block;
+    text-align: center;
+    width: auto;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #webcam_feed, #facedetection {
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+}
+
+/* Train Section with Background Image */
+#train {
+  text-align: center;
+  background-image: url('/static/hi.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cap {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+/* #detected_student {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 50%;
+  text-align: left;
+}
+
+#student_info p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+ */
