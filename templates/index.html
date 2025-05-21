@@ -1,0 +1,276 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Recognition and Performance System</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Face Recognition & Performance Evaluation System</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#capture">Face Capture</a></li>
+        <li><a href="#train">Face Trainer</a></li>
+        <li><a href="#detection">Face Detection</a></li>
+        <li><a href="#student_form">Registration</a></li>
+        <li><a href="#student_data">Student Data</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+   
+    <section id="capture">
+      <div class="cap">
+        <h2>Capture Photos for Dataset</h2>
+        <button onclick="showStudentNameForm()">Start Webcam</button>
+      </div>
+      
+      <div id="student_name_prompt" style="display: none;">
+        <label for="student_name">Enter admission no</label>
+        <input type="text" id="student_name" required>
+        <button onclick="startWebcam()">Submit</button>
+      </div>
+      <div id="webcam_feed">
+        <p>Webcam feed will appear here.</p>
+      </div>
+    </section>
+
+
+    <section id="train">
+      <h2>Train Model</h2>
+      <p>Click the button below to train the face recognition model.</p>
+      <button onclick="trainModel()">Train Model</button>
+    </section>
+
+    <section id="detection">
+      <div class="cap">
+        <h2>Face Detection</h2>
+        <p>Start detecting faces and sending notifications.</p>
+        <button onclick="startFaceDetection()">Start Detection</button>
+      </div>
+      <div id="facedetection">
+        <p>Face detection feed will appear here.</p>
+      </div>
+    </section>
+
+   
+    <section id="student_form">
+      <h2 class="new">Add New Student</h2>
+      <form action="/add_student" method="POST">
+        <label for="ad_no">Ad_no</label>
+        <input type="number" id="ad_no" name="ad_no" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        
+        
+        <label for="marks">Marks:</label>
+        <input type="number" id="marks" name="marks" required>
+        
+        <label for="attendance">Attendance:</label>
+        <input type="number" id="attendance" name="attendance" required>
+         
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required>
+        
+        <button type="submit" id="bot">Add Student</button>
+      </form>
+    </section>
+
+   
+    <section id="student_data">
+      <h2 class="new">Student Data</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Admission</th>
+            <th>Name</th>
+            <th>Marks</th>
+            <th>Attendance</th>
+            
+            <th>Department</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+            <tr>
+              <td>{{ student[0] }}</td>
+              <td>{{ student[1] }}</td>
+              <td>{{ student[2] }}</td>
+              <td>{{ student[3] }}</td>
+              <td>{{ student[4] }}</td>
+             
+              <td>
+                <button onclick="deleteStudent({{ student[0] }})">Delete</button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>visit again</p>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Recognition and Performance System</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Face Recognition & Performance Evaluation System</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#capture">Face Capture</a></li>
+        <li><a href="#train">Face Trainer</a></li>
+        <li><a href="#detection">Face Detection</a></li>
+        <li><a href="#student_form">Registration</a></li>
+        <li><a href="#student_data">Student Data</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Webcam Feed Section -->
+    <section id="capture">
+      <div class="cap">
+        <h2>Capture Photos for Dataset</h2>
+        <button onclick="showStudentNameForm()">Start Webcam</button>
+      </div>
+      <!-- Add a student name input prompt before starting the webcam -->
+      <div id="student_name_prompt" style="display: none;">
+        <label for="student_name">Enter admission no</label>
+        <input type="text" id="student_name" required>
+        <button onclick="startWebcam()">Submit</button>
+      </div>
+      <div id="webcam_feed">
+        <p>Webcam feed will appear here.</p>
+      </div>
+    </section>
+    <!-- Face Detection Section -->
+<!-- <section id="detection">
+  <div class="cap">
+    <h2>Face Detection</h2>
+    <p>Start detecting faces and sending notifications.</p>
+    <button onclick="startFaceDetection()">Start Detection</button>
+  </div>
+  <div id="facedetection">
+    <p>Face detection feed will appear here.</p>
+  </div>
+  <button onclick="fetchDetectedStudent()">Show Detected Student</button>
+</section> -->
+
+<!-- Display Detected Student Details -->
+<!-- <section id="detected_student">
+  <h2>Detected Student Details</h2>
+  <div id="student_info">
+    <p><strong>Name:</strong> <span id="student_name"></span></p>
+    <p><strong>Admission No:</strong> <span id="student_adno"></span></p>
+    <p><strong>Marks:</strong> <span id="student_marks"></span></p>
+    <p><strong>Attendance:</strong> <span id="student_attendance"></span></p>
+    <p><strong>Department:</strong> <span id="student_department"></span></p>
+  </div>
+</section> -->
+
+
+    <!-- Train Section -->
+    <section id="train">
+      <h2>Train Model</h2>
+      <p>Click the button below to train the face recognition model.</p>
+      <button onclick="trainModel()">Train Model</button>
+    </section>
+
+    <!-- Face Detection Section -->
+    <section id="detection">
+      <div class="cap">
+        <h2>Face Detection</h2>
+        <p>Start detecting faces and sending notifications.</p>
+        <button onclick="startFaceDetection()">Start Detection</button>
+      </div>
+      <div id="facedetection">
+        <p>Face detection feed will appear here.</p>
+      </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="student_form">
+      <h2 class="new">Add New Student</h2>
+      <form action="/add_student" method="POST">
+        <label for="ad_no">Ad_no</label>
+        <input type="number" id="ad_no" name="ad_no" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        
+        
+        <label for="marks">Marks:</label>
+        <input type="number" id="marks" name="marks" required>
+        
+        <label for="attendance">Attendance:</label>
+        <input type="number" id="attendance" name="attendance" required>
+         
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required>
+        
+        <button type="submit" id="bot">Add Student</button>
+      </form>
+    </section>
+
+    <!-- Student Data Section -->
+    <section id="student_data">
+      <h2 class="new">Student Data</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Admission</th>
+            <th>Name</th>
+            <th>Marks</th>
+            <th>Attendance</th>
+            
+            <th>Department</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+            <tr>
+              <td>{{ student[0] }}</td>
+              <td>{{ student[1] }}</td>
+              <td>{{ student[2] }}</td>
+              <td>{{ student[3] }}</td>
+              <td>{{ student[4] }}</td>
+             
+              <td>
+                <button onclick="deleteStudent({{ student[0] }})">Delete</button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>visit again</p>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
